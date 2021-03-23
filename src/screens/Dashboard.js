@@ -91,7 +91,9 @@ class Dashboard extends Component {
             marginBottom: 10,
           }}
           images={this.state.images}
-          autoplay />
+          autoplay
+          circleLoop
+        />
         {/* tutup image slider */}
 
         {/* card slider */}
