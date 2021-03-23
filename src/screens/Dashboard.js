@@ -90,7 +90,8 @@ class Dashboard extends Component {
             marginTop: 10,
             marginBottom: 10,
           }}
-          images={this.state.images} />
+          images={this.state.images}
+          autoplay />
         {/* tutup image slider */}
 
         {/* card slider */}
