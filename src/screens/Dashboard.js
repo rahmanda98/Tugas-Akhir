@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SafeAreaView, ScrollView, Text, View, StyleSheet, Image } from 'react-native';
+import { ScrollView, Text, View, StyleSheet, Image } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 import { block } from 'react-native-reanimated';
@@ -14,10 +14,10 @@ class Dashboard extends Component {
     this.state = {
       country: 'pilih',
       images: [
-        "https://source.unsplash.com/1024x768/?nature",
-        "https://source.unsplash.com/1024x768/?water",
-        "https://source.unsplash.com/1024x768/?girl",
-        "https://source.unsplash.com/1024x768/?tree" // Network image
+        "https://blogpictures.99.co/makanan-khas-indonesia-header.png",
+        "https://cdn.popbela.com/content-images/post/20200417/2f4801387f2c957d598dfe8dd74b11bf_750x500.jpg",
+        "https://img.okezone.com/content/2019/07/04/298/2074589/4-makanan-khas-indonesia-yang-paling-diburu-di-luar-negeri-gOjMyZizaf.jpg",
+        "https://cdn.idntimes.com/content-images/post/20170721/resep-rawon-98d900d3e27085f192f57e3167b4d834_600x400.jpeg" // url gambar
       ]
     }
   }
@@ -29,7 +29,11 @@ class Dashboard extends Component {
           flexDirection: 'row',
           alignItems: 'center'
         }}>
+
+          {/* h1 menu */}
           <Text style={styles.h1}>MENU</Text>
+
+          {/* icon cart */}
           <TouchableOpacity>
             <Image
               style={{
@@ -42,20 +46,25 @@ class Dashboard extends Component {
             />
           </TouchableOpacity>
         </View>
+
         <View style={{
           flexDirection: 'row',
           alignItems: 'center'
         }}>
+
+          {/* text input search */}
           <TextInput
             style={styles.textInput}
             placeholder="Search" />
 
+          {/* dropdown  */}
           <DropDownPicker
+            //item dropdown
             items={[
               { label: 'Pilih', value: 'pilih', hidden: true },
-              { label: 'ASIA', value: 'asia' },
-              { label: 'EUROPA', value: 'europa' },
-              { label: 'TIMUR', value: 'timur' },
+              { label: 'Asia', value: 'asia' },
+              { label: 'Europa', value: 'europa' },
+              { label: 'Timur', value: 'timur' },
             ]}
             defaultValue={this.state.country}
             containerStyle={{ height: 70 }}
@@ -68,21 +77,29 @@ class Dashboard extends Component {
               country: item.value
             })}
           />
+          {/* dropdown  */}
+
         </View>
+
+        {/* image slider */}
         <SliderBox
           style={{
             height: 200,
             marginLeft: 30,
-            marginRight: 30,
+            marginRight: 25,
             marginTop: 10,
             marginBottom: 10,
           }}
           images={this.state.images} />
+        {/* tutup image slider */}
+
+        {/* card slider */}
         <CardSilder style={{ marginTop: 30 }}>
           <View style={{ height: 170, justifyContent: 'center', alignItems: 'center', backgroundColor: 'skyblue' }}>
             <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
               menu1
             </Text>
+            {/* button detail */}
             <TouchableOpacity
               style={styles.buttonStyle}>
               <Text style={styles.buttonTitle}>Detail</Text>
@@ -92,6 +109,7 @@ class Dashboard extends Component {
             <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
               menu2
             </Text>
+            {/* button detail */}
             <TouchableOpacity
               style={styles.buttonStyle}>
               <Text style={styles.buttonTitle}>Detail</Text>
@@ -101,6 +119,7 @@ class Dashboard extends Component {
             <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
               menu3
             </Text>
+            {/* button detail */}
             <TouchableOpacity
               style={styles.buttonStyle}>
               <Text style={styles.buttonTitle}>Detail</Text>
@@ -110,17 +129,22 @@ class Dashboard extends Component {
             <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
               menu4
             </Text>
+            {/* button detail */}
             <TouchableOpacity
               style={styles.buttonStyle}>
               <Text style={styles.buttonTitle}>Detail</Text>
             </TouchableOpacity>
           </View>
         </CardSilder>
+        {/* tutup card slider */}
+
+        {/* card slider */}
         <CardSilder style={{ marginTop: 30 }}>
           <View style={{ height: 170, justifyContent: 'center', alignItems: 'center', backgroundColor: 'skyblue' }}>
             <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
               menu1
             </Text>
+            {/* button detail */}
             <TouchableOpacity
               style={styles.buttonStyle}>
               <Text style={styles.buttonTitle}>Detail</Text>
@@ -130,6 +154,7 @@ class Dashboard extends Component {
             <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
               menu2
             </Text>
+            {/* button detail */}
             <TouchableOpacity
               style={styles.buttonStyle}>
               <Text style={styles.buttonTitle}>Detail</Text>
@@ -139,6 +164,7 @@ class Dashboard extends Component {
             <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
               menu3
             </Text>
+            {/* button detail */}
             <TouchableOpacity
               style={styles.buttonStyle}>
               <Text style={styles.buttonTitle}>Detail</Text>
@@ -148,12 +174,15 @@ class Dashboard extends Component {
             <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
               menu4
             </Text>
+            {/* button detail */}
             <TouchableOpacity
               style={styles.buttonStyle}>
               <Text style={styles.buttonTitle}>Detail</Text>
             </TouchableOpacity>
           </View>
         </CardSilder>
+        {/* tutup card slider */}
+
       </ScrollView>
     )
   }
@@ -206,6 +235,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     marginLeft: 30,
+    marginRight: 5,
     paddingLeft: 16
   }
 })
