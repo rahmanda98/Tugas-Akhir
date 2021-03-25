@@ -34,7 +34,8 @@ class Dashboard extends Component {
           <Text style={styles.h1}>MENU</Text>
 
           {/* icon cart */}
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Cart')}>
             <Image
               style={{
                 width: 50,
@@ -104,7 +105,8 @@ class Dashboard extends Component {
             </Text>
             {/* button detail */}
             <TouchableOpacity
-              style={styles.buttonStyle}>
+              style={styles.buttonStyle}
+              onPress={() => this.props.navigation.navigate('DetailMenu')}>
               <Text style={styles.buttonTitle}>Detail</Text>
             </TouchableOpacity>
           </View>
@@ -114,7 +116,8 @@ class Dashboard extends Component {
             </Text>
             {/* button detail */}
             <TouchableOpacity
-              style={styles.buttonStyle}>
+              style={styles.buttonStyle}
+              onPress={() => this.props.navigation.navigate('DetailMenu')}>
               <Text style={styles.buttonTitle}>Detail</Text>
             </TouchableOpacity>
           </View>
@@ -124,7 +127,8 @@ class Dashboard extends Component {
             </Text>
             {/* button detail */}
             <TouchableOpacity
-              style={styles.buttonStyle}>
+              style={styles.buttonStyle}
+              onPress={() => this.props.navigation.navigate('DetailMenu')}>
               <Text style={styles.buttonTitle}>Detail</Text>
             </TouchableOpacity>
           </View>
@@ -134,7 +138,8 @@ class Dashboard extends Component {
             </Text>
             {/* button detail */}
             <TouchableOpacity
-              style={styles.buttonStyle}>
+              style={styles.buttonStyle}
+              onPress={() => this.props.navigation.navigate('DetailMenu')}>
               <Text style={styles.buttonTitle}>Detail</Text>
             </TouchableOpacity>
           </View>
@@ -149,7 +154,8 @@ class Dashboard extends Component {
             </Text>
             {/* button detail */}
             <TouchableOpacity
-              style={styles.buttonStyle}>
+              style={styles.buttonStyle}
+              onPress={() => this.props.navigation.navigate('DetailMenu')}>
               <Text style={styles.buttonTitle}>Detail</Text>
             </TouchableOpacity>
           </View>
@@ -159,7 +165,8 @@ class Dashboard extends Component {
             </Text>
             {/* button detail */}
             <TouchableOpacity
-              style={styles.buttonStyle}>
+              style={styles.buttonStyle}
+              onPress={() => this.props.navigation.navigate('DetailMenu')}>
               <Text style={styles.buttonTitle}>Detail</Text>
             </TouchableOpacity>
           </View>
@@ -169,7 +176,8 @@ class Dashboard extends Component {
             </Text>
             {/* button detail */}
             <TouchableOpacity
-              style={styles.buttonStyle}>
+              style={styles.buttonStyle}
+              onPress={() => this.props.navigation.navigate('DetailMenu')}>
               <Text style={styles.buttonTitle}>Detail</Text>
             </TouchableOpacity>
           </View>
@@ -179,7 +187,8 @@ class Dashboard extends Component {
             </Text>
             {/* button detail */}
             <TouchableOpacity
-              style={styles.buttonStyle}>
+              style={styles.buttonStyle}
+              onPress={() => this.props.navigation.navigate('DetailMenu')}>
               <Text style={styles.buttonTitle}>Detail</Text>
             </TouchableOpacity>
           </View>
