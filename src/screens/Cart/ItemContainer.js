@@ -5,7 +5,7 @@ class ItemsContainer extends Component {
   render() {
     return (
       <View style={styles.containterStyle}>
-
+          <Text>Test</Text>
       </View>
     );
   }

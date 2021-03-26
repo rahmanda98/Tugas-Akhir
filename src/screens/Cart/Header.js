@@ -2,10 +2,10 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const Header = () => {
+const Header = ({navigation}) => {
   return (
     <View style={styles.headerStyle}>
-      <Icon name="ios-close" size={35} color="#a8a9ad" />
+      <Icon name="ios-close" size={35} color="#a8a9ad" onPress={() => navigation.navigate('Dashboard')} />
       <Text style={{ fontSize: 18 }}>Shopping Cart</Text>
       <Text>Empty</Text>
     </View>
@@ -14,9 +14,9 @@ const Header = () => {
 
 const styles = {
   headerStyle: {
-    flex: 0.4,
+    // flex: 0.4,
     elevation: 2,
-    marginTop: 20,
+    // marginTop: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

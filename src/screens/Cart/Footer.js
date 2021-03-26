@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import TotalComp from './TotalComponent';
 
-const Footer = () => {
+const Footer = ({onPress}) => {
     const {
         containerStyle,
         buttonContainerStyle, 
@@ -16,10 +16,11 @@ const Footer = () => {
             <View style={closeButtonStyle}>
               <Text style={{ color: '#fff' }}>Close</Text>
             </View>
-    
+          <TouchableOpacity onPress={onPress}>
             <View style={checkoutButtonStyle}>
               <Text style={{ color: '#fff' }}>Go to checkout</Text>
             </View>
+          </TouchableOpacity>
           </View>
         </View>
       );

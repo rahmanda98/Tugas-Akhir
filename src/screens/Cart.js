@@ -3,10 +3,15 @@ import { StyleSheet, Text, View } from 'react-native';
 
 class Cart extends Component {
     render() {
+    const { navigation } = this.props
         return (
-            <View style={styles.container}>
-                <Text style={styles.h1}>ini cart</Text>
+        <View style={styles.container}>
+            <Header />
+            <View style={{ marginTop: 20 }}>
+            <Item />
+            <Footer onPress={() => navigation.navigate('Checkout')} />
             </View>
+        </View>
         )
     }
 }
