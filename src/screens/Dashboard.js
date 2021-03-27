@@ -40,7 +40,6 @@ class Dashboard extends Component {
               style={{
                 width: 50,
                 height: 50,
-                marginLeft: 30,
               }}
               source={{
                 uri: 'https://www.pngfind.com/pngs/m/143-1434681_digicollect-cart-icon-png-download-submit-order-icon.png',

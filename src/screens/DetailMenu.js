@@ -52,7 +52,7 @@ class DetailMenu extends Component {
                     flexDirection: 'row',
                     alignItems: 'center'
                 }}>
-                    <TouchableOpacity
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Cart')}
                         style={styles.buttonStyle1}>
                         <Text style={styles.buttonTitle}>Pesan</Text>
                     </TouchableOpacity>

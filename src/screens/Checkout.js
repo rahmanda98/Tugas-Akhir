@@ -19,12 +19,12 @@ const Checkout = ({ navigation }) => {
     >
       <ScrollView>
         <View style={styles.header}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("Dashboard")}>
             <Icon
               name="angle-double-left"
               size={50}
               color="black"
-              // onPress={handlePress}
+            // onPress={handlePress}
             />
           </TouchableOpacity>
           <View>

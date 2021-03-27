@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import DropDownPicker from 'react-native-dropdown-picker'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import { RadioButton } from 'react-native-paper'
 const methods = [
