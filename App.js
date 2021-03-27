@@ -13,6 +13,7 @@ import {
   Cart,
   Checkout,
   Payment,
+  Profile
 } from './src/screens'
 
 const Stack = createStackNavigator()
@@ -30,6 +31,7 @@ const App = () => {
           <Stack.Screen name="Dashboard" component={Dashboard} />
           <Stack.Screen name="DetailMenu" component={DetailMenu} />
           <Stack.Screen name="Cart" component={Cart} />
+          <Stack.Screen name="Profile" component={Profile} />
           <Stack.Screen name="Checkout" component={Checkout} />
           <Stack.Screen name="Payment" component={Payment} />
           <Stack.Screen name="StartScreen" component={StartScreen} />
