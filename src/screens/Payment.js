@@ -64,7 +64,7 @@ const Payment = () => {
             />
           ) : null}
         </View>
-        <View style={{ marginTop: 30 }}>
+        <View style={{ marginTop: -50 }}>
           <TouchableOpacity>
             <View style={styles.buttonCart}>
               <Text style={styles.textCart}>Confirm</Text>
