@@ -18,7 +18,7 @@ const methods = [
   },
 ]
 
-const Payment = () => {
+const Payment = ({ navigation }) => {
   const [selected, setSelected] = useState()
   const [pay, setPay] = useState('')
   return (
@@ -65,7 +65,7 @@ const Payment = () => {
           ) : null}
         </View>
         <View style={{ marginTop: -50 }}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Shipping')}>
             <View style={styles.buttonCart}>
               <Text style={styles.textCart}>Confirm</Text>
             </View>
