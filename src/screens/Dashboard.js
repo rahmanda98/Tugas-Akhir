@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { ScrollView, Text, View, StyleSheet, Image } from 'react-native'
 import DropDownPicker from 'react-native-dropdown-picker'
-import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
+import { FlatList, TextInput, TouchableOpacity } from 'react-native-gesture-handler'
 import { block } from 'react-native-reanimated'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import { SliderBox } from 'react-native-image-slider-box'
 import CardSilder from 'react-native-cards-slider'
+import axios from 'axios'
 
 class Dashboard extends Component {
   constructor(props) {
@@ -19,7 +20,54 @@ class Dashboard extends Component {
         'https://img.okezone.com/content/2019/07/04/298/2074589/4-makanan-khas-indonesia-yang-paling-diburu-di-luar-negeri-gOjMyZizaf.jpg',
         'https://cdn.idntimes.com/content-images/post/20170721/resep-rawon-98d900d3e27085f192f57e3167b4d834_600x400.jpeg', // url gambar
       ],
+      datas: []
     }
+  }
+
+  getAPI = () => {
+    axios.get('https://masak-apa-tomorisakura.vercel.app/api/categorys/recipes/')
+      .then(res => {
+        const datas = res.data.results;
+        console.log(datas);
+        this.setState({ datas });
+      })
+  }
+
+  componentDidMount() {
+    this.getAPI();
+    console.log(this.getAPI());
+  }
+
+  renderCard = () => {
+    return (
+      <FlatList
+        horizontal
+        data={this.state.datas}
+        renderItem={({ item }) => (
+          <View
+            style={{
+              height: 225,
+              width: 250,
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: 'skyblue',
+              borderRadius: 10,
+              marginTop: 25,
+              marginRight: 15,
+              marginLeft: 25
+            }}
+          >
+            <Image style={{ width: 200, height: 100, borderRadius: 10 }} source={{ uri: 'https://blogpictures.99.co/makanan-khas-indonesia-header.png' }} />
+            <Text style={{ color: 'white', fontSize: 18, lineHeight: 50, fontWeight: 'bold' }}>{item.category}</Text>
+            <TouchableOpacity
+              style={styles.buttonStyle1}
+              onPress={() => this.props.navigation.navigate('DetailMenu')}
+            >
+              <Text style={styles.buttonTitle}>Detail</Text>
+            </TouchableOpacity>
+          </View>
+        )} />
+    )
   }
 
   render() {
@@ -106,167 +154,7 @@ class Dashboard extends Component {
         />
         {/* tutup image slider */}
 
-        {/* card slider */}
-        <CardSilder style={{ marginTop: 30 }}>
-          <View
-            style={{
-              height: 170,
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: 'skyblue',
-            }}
-          >
-            <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
-              menu1
-            </Text>
-            {/* button detail */}
-            <TouchableOpacity
-              style={styles.buttonStyle}
-              onPress={() => this.props.navigation.navigate('DetailMenu')}
-            >
-              <Text style={styles.buttonTitle}>Detail</Text>
-            </TouchableOpacity>
-          </View>
-          <View
-            style={{
-              height: 170,
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: 'lightsalmon',
-            }}
-          >
-            <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
-              menu2
-            </Text>
-            {/* button detail */}
-            <TouchableOpacity
-              style={styles.buttonStyle}
-              onPress={() => this.props.navigation.navigate('DetailMenu')}
-            >
-              <Text style={styles.buttonTitle}>Detail</Text>
-            </TouchableOpacity>
-          </View>
-          <View
-            style={{
-              height: 170,
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: 'teal',
-            }}
-          >
-            <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
-              menu3
-            </Text>
-            {/* button detail */}
-            <TouchableOpacity
-              style={styles.buttonStyle}
-              onPress={() => this.props.navigation.navigate('DetailMenu')}
-            >
-              <Text style={styles.buttonTitle}>Detail</Text>
-            </TouchableOpacity>
-          </View>
-          <View
-            style={{
-              height: 170,
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: 'lightpink',
-            }}
-          >
-            <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
-              menu4
-            </Text>
-            {/* button detail */}
-            <TouchableOpacity
-              style={styles.buttonStyle}
-              onPress={() => this.props.navigation.navigate('DetailMenu')}
-            >
-              <Text style={styles.buttonTitle}>Detail</Text>
-            </TouchableOpacity>
-          </View>
-        </CardSilder>
-        {/* tutup card slider */}
-
-        {/* card slider */}
-        <CardSilder style={{ marginTop: 30 }}>
-          <View
-            style={{
-              height: 170,
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: 'skyblue',
-            }}
-          >
-            <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
-              menu1
-            </Text>
-            {/* button detail */}
-            <TouchableOpacity
-              style={styles.buttonStyle}
-              onPress={() => this.props.navigation.navigate('DetailMenu')}
-            >
-              <Text style={styles.buttonTitle}>Detail</Text>
-            </TouchableOpacity>
-          </View>
-          <View
-            style={{
-              height: 170,
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: 'lightsalmon',
-            }}
-          >
-            <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
-              menu2
-            </Text>
-            {/* button detail */}
-            <TouchableOpacity
-              style={styles.buttonStyle}
-              onPress={() => this.props.navigation.navigate('DetailMenu')}
-            >
-              <Text style={styles.buttonTitle}>Detail</Text>
-            </TouchableOpacity>
-          </View>
-          <View
-            style={{
-              height: 170,
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: 'teal',
-            }}
-          >
-            <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
-              menu3
-            </Text>
-            {/* button detail */}
-            <TouchableOpacity
-              style={styles.buttonStyle}
-              onPress={() => this.props.navigation.navigate('DetailMenu')}
-            >
-              <Text style={styles.buttonTitle}>Detail</Text>
-            </TouchableOpacity>
-          </View>
-          <View
-            style={{
-              height: 170,
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: 'lightpink',
-            }}
-          >
-            <Text style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}>
-              menu4
-            </Text>
-            {/* button detail */}
-            <TouchableOpacity
-              style={styles.buttonStyle}
-              onPress={() => this.props.navigation.navigate('DetailMenu')}
-            >
-              <Text style={styles.buttonTitle}>Detail</Text>
-            </TouchableOpacity>
-          </View>
-        </CardSilder>
-        {/* tutup card slider */}
+        {this.renderCard()}
       </ScrollView>
     )
   }
@@ -294,6 +182,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#00345e',
     width: 100,
     height: 48,
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonStyle1: {
+    backgroundColor: '#00345e',
+    width: 100,
+    height: 40,
     borderRadius: 5,
     alignItems: 'center',
     justifyContent: 'center',
