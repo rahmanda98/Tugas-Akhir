@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 import ShippingPartner from "../components/ShippingPartner";
 
-const Shipping = () => {
+const Shipping = ({ navigation }) => {
     return (
         <View
         style={{
