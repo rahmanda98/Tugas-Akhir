@@ -12,7 +12,7 @@ const Shipping = ({ navigation }) => {
       >
         <View
           style={{
-            height: hp("45%"),
+            height: hp("25%"),
             width: "100%",
             marginTop: 20,
             borderBottomWidth: 1,
@@ -38,19 +38,14 @@ const Shipping = ({ navigation }) => {
               }}
             >
               <ShippingPartner
-                //imageUri={require("../../assets/logo/logo_1.jpg")}
-                name="GoSend"
-                description="No additional Costs"
-              />
-              <ShippingPartner
-                //imageUri={require("../../assets/logo/logo_2.jpg")}
-                name="JNE"
-                description="No additional Costs"
-              />
-              <ShippingPartner
-                //imageUri={require("../../assets/logo/logo_3.png")}
+                //imageUri={require("./assets/logo_1.jpg")}
                 name="Sicepat"
-                description="Additional 12.99 $"
+                description="No additional Costs"
+              />
+              <ShippingPartner
+                //imageUri={require("./assets/logo_2.png")}
+                name="JNT"
+                description="No Additional Costs"
               />
             </View>
           </View>
@@ -62,50 +57,6 @@ const Shipping = ({ navigation }) => {
             paddingHorizontal: 15
           }}
         >
-          <Text
-            style={{
-              color: "gray",
-              fontSize: 14,
-              marginBottom: 15
-            }}
-          >
-            Shipping Address
-          </Text>
-          <Text
-            style={{
-              fontSize: 14
-            }}
-          >
-            Johnny Doe
-          </Text>
-          <Text
-            style={{
-              fontSize: 14
-            }}
-          >
-            11144 Military Trail (North)
-          </Text>
-          <Text
-            style={{
-              fontSize: 14
-            }}
-          >
-            Apartment #3122
-          </Text>
-          <Text
-            style={{
-              fontSize: 14
-            }}
-          >
-            23122 Palo Alot
-          </Text>
-          <Text
-            style={{
-              fontSize: 14
-            }}
-          >
-            California, United States
-          </Text>
           <View
             style={{
               flex: 1,
@@ -114,7 +65,7 @@ const Shipping = ({ navigation }) => {
           >
             <TouchableOpacity
               activeOpacity={0.8}
-              onPress={() => this.props.navigation.navigate("Payment")}
+              onPress={() => navigation.navigate('Payment')}
               style={{
                 backgroundColor: "#F08C4F",
                 justifyContent: "center",
@@ -134,7 +85,7 @@ const Shipping = ({ navigation }) => {
                   color: "white"
                 }}
               >
-                Next Step
+                Procedd to Payment Steps!!
               </Text>
             </TouchableOpacity>
           </View>

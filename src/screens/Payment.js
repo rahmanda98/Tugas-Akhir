@@ -65,7 +65,7 @@ const Payment = ({ navigation }) => {
           ) : null}
         </View>
         <View style={{ marginTop: -50 }}>
-          <TouchableOpacity onPress={() => navigation.navigate('Shipping')}>
+          <TouchableOpacity  onPress={() => navigation.navigate('Dashboard')}>
             <View style={styles.buttonCart}>
               <Text style={styles.textCart}>Confirm</Text>
             </View>
